@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const samp_controller_1 = require("../controllers/samp.controller");
+const router = (0, express_1.Router)();
+router.post('/samp/new', samp_controller_1.createPJSamp);
+router.get('/samp', samp_controller_1.getPJSamp);
+router.get('/samp/vehicles', samp_controller_1.getPJSampVehicles);
+//router.get('/user/samp/:id', myUser);
+exports.default = router;
