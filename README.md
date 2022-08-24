@@ -14,3 +14,4 @@ This API is developed in TypeScript
 
 ## Endpoints
 
+[Endpoints](https://github.com/GalassoX/rootwide-apirest/blob/master/src/routes/endpoints.md)
