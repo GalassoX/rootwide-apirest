@@ -6,6 +6,4 @@ router.post('/samp/new', createPJSamp);
 router.get('/samp', getPJSamp);
 router.get('/samp/vehicles', getPJSampVehicles);
 
-//router.get('/user/samp/:id', myUser);
-
 export default router;

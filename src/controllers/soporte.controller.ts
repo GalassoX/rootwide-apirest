@@ -55,7 +55,6 @@ export const createPostSoporte = async (req: Request, res: Response) => {
         res.json({ en: errors, es: errorEs });
         return;
     }
-    //const ticketid = count[0]['COUNT(*)'];
     let ticketid = 0;
     const count = await executePCU<any[]>('SELECT COUNT(*) from soporte_posts WHERE replyto=0', []);
     if (parseInt(reply) > 0) {
@@ -85,7 +84,6 @@ export const getPost = async (req: Request, res: Response) => {
         return;
     }
     const { tid } = req.query;
-    //const ticketData = await executePCU<IPostSoporte[]>('SELECT * FROM soporte_posts WHERE id=? OR pid=?', [post, post]);
     const ticketData = await executePCU<IPostSoporte[]>('SELECT * FROM soporte_posts WHERE ticketid=?', [tid]);
     if (ticketData.length > 0) {
         const ticket = ticketData[0];

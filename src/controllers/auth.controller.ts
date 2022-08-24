@@ -23,9 +23,7 @@ export const createUser = async (req: Request, res: Response) => {
         errorsEs.push('Contraseña inválida.');
     }
 
-    //const characterName = character_first + '_' + character_last;
     const usersPCU = await executePCU<IUser[]>(`SELECT * FROM accounts WHERE username=? OR email=?`, [username, email]);
-    //const usersGame = await executeGame<IUserSAMP[]>(`SELECT * FROM accounts WHERE name=?`, [characterName]);
 
     if (usersPCU.length > 0) {
         if (usersPCU[0].username == username) {

@@ -6,7 +6,6 @@ import { IUserFixed } from '../data/interfaces/user';
 
 declare module "jsonwebtoken" {
     export interface JwtPayload {
-        //email: string;
         id: number;
         samp_id: number;
     }
@@ -26,16 +25,6 @@ export const verifyToken = (token: string) => {
     const decoded = jwt.verify(token, CONSTANTS.PRIVATE_TOKEN);
     return decoded;
 }
-
-/*export const getUserInHeaders = (req: Request) => {
-    const token = req.headers.authorization as string;
-    if (!token) return false;
-    const decoded = verifyToken(token) as jwt.JwtPayload;
-    if (!decoded) {
-        return false;
-    }
-    return decoded;
-}*/
 
 export const getDataToken = (req: Request) => {
     const token = getToken(req);

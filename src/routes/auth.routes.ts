@@ -5,6 +5,4 @@ const router = Router();
 router.post('/signup', createUser);
 router.post('/login', loginUser);
 
-//router.get('/user/samp/:id', myUser);
-
 export default router;

@@ -5,18 +5,9 @@ import { CONSTANTS } from '../config';
 let database: Pool;
 let dbGame: Pool;
 let dbForo: Pool;
-//export let dbGame: mysql.Connection;
 
 export const connectDB = async () => {
-    /*database = mysql.createConnection({
-        host: CONSTANTS.DB.host,
-        user: CONSTANTS.DB.user,
-        database: CONSTANTS.DB.database,
-        password; CONSTANTS.DB.password
-    })*/
     try {
-        /*database = await mysql.createConnection(CONSTANTS.DB);
-        dbGame = await mysql.createConnection(CONSTANTS.DB_GAME);*/
         const dbInfo = CONSTANTS.DB;
         database = createPool({
             host: dbInfo.host,
